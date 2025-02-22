@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
-import Sparkle from "../Sparkle";
+import Sparkle from "~/components/Sparkle";
 import PlatypusImage from "~/images/playtypus.png"; // Ensure correct import path
 
 const Hero = forwardRef<HTMLDivElement>((props, ref) => (
