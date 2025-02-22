@@ -1,6 +1,6 @@
 # PINKonomic
 
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/{owner}/{repo}/badge)](https://scorecard.dev/viewer/?uri=github.com/{owner}/{repo})
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/kartheekgottipati/pinkonomic/badge)](https://securityscorecards.dev/viewer/?uri=github.com/kartheekgottipati/pinkonomic)
 
 Welcome to the official website of Polkadot's first meme coin, $PINK! This project is an open-source initiative to bring fun, community-driven experiences to the Polkadot ecosystem.
 
