@@ -2,6 +2,14 @@
 
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/kartheekgottipati/pinkonomic/badge)](https://securityscorecards.dev/viewer/?uri=github.com/kartheekgottipati/pinkonomic)
 
+## Social Links
+
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/PINKonomic)
+[![X (formerly Twitter)](https://img.shields.io/badge/X-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/pinkonomic)
+[![Reddit](https://img.shields.io/badge/Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/r/pinkonomic/)
+[![Warpcast](https://img.shields.io/badge/Warpcast-000000?style=for-the-badge&logo=warpcast&logoColor=white)](https://warpcast.com/pinkonomic)
+[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/invite/Hn7xKSxZPb)
+
 Welcome to the official website of Polkadot's first meme coin, $PINK! This project is an open-source initiative to bring fun, community-driven experiences to the Polkadot ecosystem.
 
 ## Table of Contents
