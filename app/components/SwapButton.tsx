@@ -21,7 +21,7 @@ const SwapButton = () => {
     <>
       {/* 🔹 Swap Button (Same for Opening & Closing) */}
       <motion.button
-        className="fixed bottom-6 right-6 z-50 flex items-center justify-center px-6 py-3 bg-gradient-to-r from-pink-500 to-blue-500 text-white text-lg font-semibold rounded-full shadow-lg hover:scale-105 transition-all"
+        className="fixed bottom-6 right-6 z-50 flex items-center justify-center px-6 py-3 bg-gradient-to-r from-pink-500 to-blue-500 text-white text-lg font-semibold rounded-lg shadow-lg hover:shadow-pink-400/30 transition-all"
         onClick={() => setIsOpen((prev) => !prev)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
@@ -33,7 +33,7 @@ const SwapButton = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed bottom-20 right-6 z-50 w-[430px] h-[684px] bg-black border border-pink-500/30 shadow-2xl rounded-xl overflow-hidden"
+            className="fixed bottom-20 right-6 z-50 w-[430px] h-[684px] bg-black bg-opacity-50 backdrop-blur-lg border border-pink-500/20 shadow-lg rounded-lg overflow-hidden"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
