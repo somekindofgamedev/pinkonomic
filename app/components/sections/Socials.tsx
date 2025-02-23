@@ -23,7 +23,7 @@ const Socials = forwardRef<HTMLDivElement>((props, ref) => (
 
     {/* Section Header with Glow Effect */}
     <div className="relative text-center max-w-4xl mx-auto px-6">
-      <h2 className="relative text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide uppercase bg-gradient-to-r from-pink-400 to-purple-500 text-transparent bg-clip-text leading-tight sm:leading-normal">
+      <h2 className="relative text-4xl md:text-5xl font-extrabold tracking-wide uppercase bg-gradient-to-r from-pink-400 to-purple-500 text-transparent bg-clip-text leading-tight sm:leading-normal">
         Join The Community
         {/* 🔥 Glowing Background Effect */}
         <motion.div
@@ -33,7 +33,7 @@ const Socials = forwardRef<HTMLDivElement>((props, ref) => (
           transition={{ duration: 1.2, ease: "easeOut" }}
         />
       </h2>
-      <p className="text-base sm:text-lg text-gray-400 mt-3 sm:mt-4">
+      <p className="text-base md:text-lg text-gray-400 mt-3 sm:mt-4">
         Stay updated and engage with PINK holders worldwide.
       </p>
     </div>
@@ -62,7 +62,7 @@ const Socials = forwardRef<HTMLDivElement>((props, ref) => (
             <Icon className="text-5xl text-white" />
 
             {/* Social Name */}
-            <p className="mt-4 text-xl font-semibold">{social.name}</p>
+            <p className="mt-4 text-lg md:text-xl font-semibold">{social.name}</p>
           </motion.a>
         );
       })}
