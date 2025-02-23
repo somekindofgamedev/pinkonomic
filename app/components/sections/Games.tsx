@@ -34,10 +34,12 @@ const Games = forwardRef<HTMLDivElement>((props, ref) => (
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
-      <h2 className="text-5xl md:text-6xl font-extrabold tracking-wide uppercase bg-gradient-to-r from-pink-400 to-blue-400 text-transparent bg-clip-text flex items-center justify-center gap-3">
-        <GiJoystick className="text-6xl md:text-7xl text-pink-400" /> Enter the Pinkiverse 🎮
+      <h2 className="text-4xl md:text-5xl font-extrabold tracking-wide uppercase bg-gradient-to-r from-pink-400 to-blue-400 text-transparent bg-clip-text flex items-center justify-between gap-3">
+        <GiJoystick className="text-4xl md:text-5xl text-pink-400" />
+        <span>Enter the Pinkiverse</span>
+        <span className="text-4xl md:text-5xl">🎮</span>
       </h2>
-      <p className="text-lg md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+      <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
         The ultimate gaming experience awaits. 🏆 Dominate leaderboards. 🎮 Play thrilling blockchain-powered games. 🚀 Compete in tournaments & claim rewards!
       </p>
     </motion.div>
@@ -99,7 +101,7 @@ const GameCard = ({ game, index }: { game: any; index: number }) => (
     </div>
 
     {/* Game Title */}
-    <h3 className="text-xl md:text-2xl font-bold text-pink-400 mt-5">{game.name}</h3>
+    <h3 className="text-lg md:text-xl font-bold text-pink-400 mt-5">{game.name}</h3>
 
     {/* Game Tagline */}
     <p className="text-sm md:text-md text-gray-300 mt-4 md:mt-5 px-4">
@@ -122,7 +124,7 @@ const GameCard = ({ game, index }: { game: any; index: number }) => (
 const FeatureCard = ({ icon, title, description }: { icon: JSX.Element; title: string; description: string }) => (
   <motion.div className="flex flex-col items-center p-5 md:p-6 bg-black bg-opacity-40 backdrop-blur-lg rounded-3xl border border-pink-500/10 shadow-lg hover:shadow-pink-400/20 transition duration-300">
     <div className="text-pink-400 text-3xl md:text-4xl mb-3 md:mb-4">{icon}</div>
-    <h4 className="text-lg md:text-xl font-semibold text-white">{title}</h4>
+    <h4 className="text-md md:text-lg font-semibold text-white">{title}</h4>
     <p className="text-sm md:text-md text-gray-300 mt-2 md:mt-3">{description}</p>
   </motion.div>
 );
