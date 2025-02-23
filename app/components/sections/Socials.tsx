@@ -4,11 +4,11 @@ import { FaTelegram, FaTwitter, FaReddit, FaDiscord } from "react-icons/fa";
 import { PiWaveSquareBold } from "react-icons/pi";
 
 const socials = [
-  { name: "Telegram", icon: FaTelegram, url: "https://t.me/PINKonomic", color: "bg-blue-500" },
-  { name: "Twitter (X)", icon: FaTwitter, url: "https://x.com/pinkonomic", color: "bg-gray-800" },
-  { name: "Reddit", icon: FaReddit, url: "https://www.reddit.com/r/pinkonomic/", color: "bg-orange-500" },
-  { name: "Warpcast", icon: PiWaveSquareBold, url: "https://warpcast.com/pinkonomic", color: "bg-purple-600" },
-  { name: "Discord", icon: FaDiscord, url: "https://discord.com/invite/Hn7xKSxZPb", color: "bg-indigo-500" },
+  { name: "Telegram", icon: FaTelegram, url: "https://t.me/PINKonomic", color: "bg-blue-500", shadow: "shadow-blue-500/50" },
+  { name: "Twitter (X)", icon: FaTwitter, url: "https://x.com/pinkonomic", color: "bg-gray-800", shadow: "shadow-gray-800/50" },
+  { name: "Reddit", icon: FaReddit, url: "https://www.reddit.com/r/pinkonomic/", color: "bg-orange-500", shadow: "shadow-orange-500/50" },
+  { name: "Warpcast", icon: PiWaveSquareBold, url: "https://warpcast.com/pinkonomic", color: "bg-purple-600", shadow: "shadow-purple-600/50" },
+  { name: "Discord", icon: FaDiscord, url: "https://discord.com/invite/Hn7xKSxZPb", color: "bg-indigo-500", shadow: "shadow-indigo-500/50" },
 ];
 
 const Socials = forwardRef<HTMLDivElement>((props, ref) => (
@@ -48,16 +48,13 @@ const Socials = forwardRef<HTMLDivElement>((props, ref) => (
             href={social.url}
             target="_blank"
             rel="noopener noreferrer"
-            className={`relative w-52 h-52 flex flex-col items-center justify-center rounded-xl ${social.color} shadow-lg shadow-white/10 transition`}
-            whileHover={{ scale: 1.1, y: -10 }}
-            whileTap={{ scale: 0.95 }}
+            className={`relative w-52 h-52 flex flex-col items-center justify-center rounded-xl ${social.color} shadow-lg ${social.shadow} transition`}
+            whileHover={{ scale: 1.05, y: -5 }}
+            whileTap={{ scale: 0.98 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
           >
-            {/* Neon Glow Border */}
-            <motion.div
-              className="absolute inset-0 rounded-xl border-2 border-transparent transition"
-              whileHover={{ borderColor: "rgba(255,255,255,0.5)" }}
-            />
-
             {/* Social Icon */}
             <Icon className="text-5xl text-white" />
 
