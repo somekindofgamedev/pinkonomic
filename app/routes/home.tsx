@@ -1,4 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
+import { Scrollspy } from "@makotot/ghostui";
+import {
+  FaHome,
+  FaChartLine,
+  FaGamepad,
+  FaRocket,
+  FaHandshake,
+  FaShareAlt,
+  FaExchangeAlt,
+  FaImage
+} from "react-icons/fa";
 import { Sidebar, MobileNav } from "~/components/Navigation";
 import Hero from "~/components/sections/Hero";
 import Games from "~/components/sections/Games";
@@ -8,108 +19,64 @@ import Socials from "~/components/sections/Socials";
 import Pinkonomics from "~/components/sections/Pinkonomics";
 import Exchanges from "~/components/sections/Exchanges";
 import NFTSection from "~/components/sections/NFTSection";
+import type { SectionItem } from "~/types";
+
+const sections: SectionItem[] = [
+  { id: "hero", label: "Hero", icon: <FaHome size={20} /> },
+  { id: "pinkonomics", label: "Pinkonomics", icon: <FaChartLine size={20} /> },
+  { id: "games", label: "Games", icon: <FaGamepad size={20} /> },
+  { id: "nft", label: "NFT", icon: <FaImage size={20} /> },
+  { id: "teleport", label: "Teleport", icon: <FaRocket size={20} /> },
+  { id: "exchanges", label: "Exchanges", icon: <FaExchangeAlt size={20} /> },
+  { id: "partnerships", label: "Partnerships", icon: <FaHandshake size={20} /> },
+  { id: "socials", label: "Socials", icon: <FaShareAlt size={20} /> },
+];
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState<string>("hero");
-
-  // Create refs for each section ID:
-  const sectionRefs = useRef<{
-    [key: string]: HTMLDivElement | null;
-  }>({
-    hero: null,
-    pinkonomics: null,
-    games: null,
-    teleport: null,
-    exchanges: null,
-    partnerships: null,
-    socials: null,
-  });
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      let newActiveSection = activeSection;
-      let maxRatio = 0;
-
-      for (const entry of entries) {
-        if (entry.intersectionRatio > maxRatio) {
-          maxRatio = entry.intersectionRatio;
-          newActiveSection = entry.target.id;
-        }
-      }
-
-      if (newActiveSection !== activeSection) {
-        setActiveSection(newActiveSection);
-      }
-    }, {
-      root: null,
-      rootMargin: "0px",
-      threshold: Array.from({ length: 101 }, (_, i) => i / 100),
-    });
-
-    // Observe each section
-    Object.values(sectionRefs.current).forEach((section) => {
-      if (section) observer.observe(section);
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [activeSection]);
-
-  // Smooth scroll to section
-  const handleSectionClick = (id: string) => {
-    const section = sectionRefs.current[id];
-
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-
-      // Safari fallback
-      setTimeout(() => {
-        const yOffset = -80;
-        const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
-        window.scrollTo({ top: y, behavior: "smooth" });
-      }, 50);
-    }
-  };
+  const sectionRefs = sections.map(() => useRef<HTMLDivElement>(null));
 
   return (
-    <div className="relative overflow-hidden">
-      {/* Desktop Sidebar */}
-      <div className="lg:block hidden">
-        <Sidebar activeSection={activeSection} onSectionClick={handleSectionClick} />
-      </div>
+    <Scrollspy sectionRefs={sectionRefs as React.RefObject<Element>[]}>
+      {({ currentElementIndexInViewport }) => (
+        <div className="relative overflow-hidden">
+          {/* Desktop Sidebar */}
+          <div className="lg:block hidden" data-cy="nav-wrapper">
+            <Sidebar sections={sections} currentElementIndexInViewport={currentElementIndexInViewport} />
+          </div>
 
-      {/* Mobile Navigation */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-50">
-        <MobileNav activeSection={activeSection} onSectionClick={handleSectionClick} />
-      </div>
+          {/* Mobile Navigation */}
+          <div className="lg:hidden fixed top-0 left-0 right-0 z-50" data-cy="nav-wrapper">
+            <MobileNav sections={sections} currentElementIndexInViewport={currentElementIndexInViewport} />
+          </div>
 
-      {/* Main content area */}
-      <div className="flex-1">
-        {/* 1. Hero Section */}
-        <Hero ref={(el) => { sectionRefs.current.hero = el; }} />
+          {/* Main content area */}
+          <div className="flex-1" data-cy="section-wrapper">
+            {/* 1. Hero Section */}
+            <Hero ref={sectionRefs[0]} />
 
-        {/* 2. Pinkonomics Section */}
-        <Pinkonomics ref={(el) => { sectionRefs.current.pinkonomics = el; }} />
+            {/* 2. Pinkonomics Section */}
+            <Pinkonomics ref={sectionRefs[1]} />
 
-        {/* 3. Games Section */}
-        <Games ref={(el) => { sectionRefs.current.games = el; }} />
+            {/* 3. Games Section */}
+            <Games ref={sectionRefs[2]} />
 
-        {/* 4. NFT Section */}
-        <NFTSection ref={(el) => { sectionRefs.current.nft = el; }} />
+            {/* 4. NFT Section */}
+            <NFTSection ref={sectionRefs[3]} />
 
-        {/* 5. Teleport Section */}
-        <Teleport ref={(el) => { sectionRefs.current.teleport = el; }} />
+            {/* 5. Teleport Section */}
+            <Teleport ref={sectionRefs[4]} />
 
-        {/* 6. Exchanges Section */}
-        <Exchanges ref={(el) => { sectionRefs.current.exchanges = el; }} />
-        
-        {/* 7. Partnerships Section */}
-        <Partnerships ref={(el) => { sectionRefs.current.partnerships = el; }} />
-        
-        {/* 8. Socials Section */}
-        <Socials ref={(el) => { sectionRefs.current.socials = el; }} />
-      </div>
-    </div>
+            {/* 6. Exchanges Section */}
+            <Exchanges ref={sectionRefs[5]} />
+
+            {/* 7. Partnerships Section */}
+            <Partnerships ref={sectionRefs[6]} />
+
+            {/* 8. Socials Section */}
+            <Socials ref={sectionRefs[7]} />
+          </div>
+        </div>
+      )}
+    </Scrollspy>
   );
 }
