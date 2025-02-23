@@ -1,6 +1,6 @@
 import { useState, type JSX } from "react";
 import { motion } from "framer-motion";
-import HomeButton from "~/components/HomeButton";
+import HomeButton from "~/components/buttons/HomeButton";
 
 interface Tournament {
   name: string;

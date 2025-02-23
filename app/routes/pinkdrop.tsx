@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
-import HomeButton from "~/components/HomeButton";
+import HomeButton from "~/components/buttons/HomeButton";
 
 const PINKDROP_URL = "https://pink.frictionlessgaming.com/";
 
