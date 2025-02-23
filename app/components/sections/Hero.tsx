@@ -27,13 +27,13 @@ const Hero = forwardRef<HTMLDivElement>((props, ref) => (
     >
       <h1
         className="font-extrabold uppercase bg-gradient-to-r from-pink-500 to-blue-500 text-transparent bg-clip-text"
-        style={{ fontSize: "clamp(3rem, 6vw, 7rem)", lineHeight: "1.1" }}
+        style={{ fontSize: "clamp(2.5rem, 6vw, 7rem)", lineHeight: "1.1" }}
       >
         Welcome to <span className="text-pink-500">PINK</span>
       </h1>
       <motion.h2
         className="font-semibold uppercase tracking-widest text-white opacity-100"
-        style={{ fontSize: "clamp(1.2rem, 2.5vw, 2.8rem)", lineHeight: "1.2", textShadow: "0px 0px 30px rgba(255, 105, 180, 1)" }}
+        style={{ fontSize: "clamp(1rem, 2.5vw, 2.8rem)", lineHeight: "1.2", textShadow: "0px 0px 30px rgba(255, 105, 180, 1)" }}
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
@@ -57,14 +57,14 @@ const Hero = forwardRef<HTMLDivElement>((props, ref) => (
       ].map((text, index) => (
         <motion.div
           key={index}
-          className="flex flex-col md:flex-row items-center space-x-5 text-left"
+          className="flex items-center space-x-5 text-left"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 + index * 0.2, ease: "easeOut" }}
         >
           {/* ⭐ Animated Sparkle */}
           <motion.div
-            className="w-10 h-10 flex-shrink-0 mb-4 md:mb-0"
+            className="w-10 h-10 flex-shrink-0"
             whileHover={{ scale: 1.2, rotate: 10 }}
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
           >
