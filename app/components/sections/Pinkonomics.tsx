@@ -42,7 +42,7 @@ const Pinkonomics = forwardRef<HTMLDivElement>((props, ref) => {
     <section
       id="pinkonomics"
       ref={ref}
-      className="relative flex flex-col items-center text-white py-24 px-6 bg-black"
+      className="relative flex flex-col items-center text-white py-24 px-4 md:px-12 bg-black"
     >
       {/* 🔥 Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-pink-700/50 to-black opacity-60 -z-10"></div>
@@ -50,7 +50,7 @@ const Pinkonomics = forwardRef<HTMLDivElement>((props, ref) => {
 
       {/* 🎯 Section Title */}
       <motion.h2
-        className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-pink-400 to-blue-500 text-transparent bg-clip-text text-center"
+        className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-pink-400 to-blue-500 text-transparent bg-clip-text text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -59,16 +59,16 @@ const Pinkonomics = forwardRef<HTMLDivElement>((props, ref) => {
       </motion.h2>
 
       {/* 🔥 Burn Tracker */}
-      <div className="relative mt-12 flex flex-col md:flex-row items-center w-full max-w-3xl px-6 md:px-12">
+      <div className="relative mt-12 flex flex-col md:flex-row items-center w-full max-w-3xl px-4 md:px-12">
         {/* 🔥 Animated Pink Flame (Always on the Left) */}
-        <div className="flex-shrink-0 mr-6">
-          <img src={PinkFlame} alt="Burn Animation" className="w-24 h-24 object-contain" />
+        <div className="flex-shrink-0 mr-6 mb-6 md:mb-0">
+          <img src={PinkFlame} alt="Burn Animation" className="w-24 h-24 md:w-32 md:h-32 object-contain" /> {/* Adjusted size */}
         </div>
 
         {/* 🔥 Burn Amount & Progress Bar */}
         <div className="w-full flex flex-col items-center md:items-start">
           {/* 🔥 Burned Number & Text in 2 Lines */}
-          <motion.div className="text-3xl md:text-4xl font-bold text-pink-400 text-center md:text-left">
+          <motion.div className="text-3xl md:text-5xl font-bold text-pink-400 text-center md:text-left">
             {burnedAmount.toLocaleString()} PINK Burned
           </motion.div>
           <p className="text-gray-400 text-sm md:text-base mt-1 text-center md:text-left">
@@ -102,7 +102,7 @@ const Pinkonomics = forwardRef<HTMLDivElement>((props, ref) => {
           >
             <p className="text-lg md:text-xl font-semibold text-gray-300">{item.label}</p>
             <motion.p
-              className={`text-3xl md:text-4xl font-bold ${item.color}`}
+              className={`text-2xl md:text-4xl font-bold ${item.color}`}
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -114,7 +114,7 @@ const Pinkonomics = forwardRef<HTMLDivElement>((props, ref) => {
       </div>
 
       {/* 📜 Contract Addresses */}
-      <motion.div className="mt-12 w-full max-w-3xl space-y-4">
+      <motion.div className="mt-12 w-full max-w-3xl space-y-4 px-4 md:px-0">
         {contractAddresses.map((contract, index) => (
           <div
             key={index}
@@ -125,7 +125,7 @@ const Pinkonomics = forwardRef<HTMLDivElement>((props, ref) => {
               <p className="text-white font-medium">{contract.name}</p>
 
               {/* 📌 Icons - **Moved to Right for Mobile** */}
-              <div className="flex space-x-2 md:hidden">
+              <div className="flex space-x-4 md:hidden"> {/* Increased space */}
                 <motion.button
                   className="text-pink-400 hover:text-pink-500"
                   onClick={() => copyToClipboard(contract.address)}
@@ -146,11 +146,11 @@ const Pinkonomics = forwardRef<HTMLDivElement>((props, ref) => {
             </div>
 
             {/* 🔗 Address (Below on Mobile, Inline on Desktop) */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between w-full md:w-auto mt-2 md:mt-0">
+            <div className="flex flex-col md:flex-row md:items-center justify-between w-full md:w-auto mt-2 md:mt-0 space-y-2 md:space-y-0 md:space-x-4"> {/* Increased space */}
               <span className="text-gray-400 font-mono text-sm truncate">{contract.address}</span>
 
               {/* Desktop Icons - Stays Below for Larger Screens */}
-              <div className="hidden md:flex space-x-2">
+              <div className="hidden md:flex space-x-4"> {/* Increased space */}
                 <motion.button
                   className="text-pink-400 hover:text-pink-500"
                   onClick={() => copyToClipboard(contract.address)}
@@ -172,7 +172,7 @@ const Pinkonomics = forwardRef<HTMLDivElement>((props, ref) => {
           </div>
         ))}
       </motion.div>
-      {/* 🚀 External Buttons */}
+
       {/* 🚀 External Buttons */}
       <div className="mt-16 w-full flex flex-col md:flex-row md:justify-center gap-4 md:gap-6 px-4">
         {[
@@ -189,8 +189,7 @@ const Pinkonomics = forwardRef<HTMLDivElement>((props, ref) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FaExternalLinkAlt />
-            <span>{btn.label}</span>
+            <span>{btn.label}</span> {/* Removed icon */}
           </motion.a>
         ))}
       </div>
