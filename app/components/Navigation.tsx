@@ -12,6 +12,11 @@ interface NavigationProps {
   currentElementIndexInViewport: number;
 }
 
+const handleSectionClick = (id: string) => {
+  const section = document.getElementById(id);
+  section?.scrollIntoView({ behavior: "smooth" });
+};
+
 export const Sidebar: React.FC<NavigationProps> = ({ sections, currentElementIndexInViewport }) => {
   return (
     <motion.aside
@@ -24,7 +29,7 @@ export const Sidebar: React.FC<NavigationProps> = ({ sections, currentElementInd
     >
       {sections.map((section, idx) => {
         return (
-          <motion.a
+          <motion.button
             key={idx}
             className={`
               relative flex items-center justify-center w-12 h-12 rounded-lg transition-all
@@ -32,7 +37,7 @@ export const Sidebar: React.FC<NavigationProps> = ({ sections, currentElementInd
               group
             `}
             whileTap={{ scale: 0.95 }}
-            href={`#${section.id}`}
+            onClick={() => handleSectionClick(section.id)}
           >
             {section.icon}
 
@@ -43,7 +48,7 @@ export const Sidebar: React.FC<NavigationProps> = ({ sections, currentElementInd
             >
               {section.label}
             </motion.span>
-          </motion.a>
+          </motion.button>
         );
       })}
     </motion.aside>
@@ -66,15 +71,15 @@ export const MobileNav: React.FC<NavigationProps> = ({ sections, currentElementI
       <div className="w-full flex overflow-x-auto no-scrollbar px-2 py-3 space-x-6">
       {sections.map((section, idx) => {
         return (
-          <a
+          <button
             key={idx}
             className={`flex flex-col items-center justify-center text-xs p-2 rounded-md transition-all
               ${currentElementIndexInViewport === idx ? "text-pink-500" : "text-white/60 hover:text-white"}`}
-            href={`#${section.id}`}
+            onClick={() => handleSectionClick(section.id)}
           >
             {section.icon}
             <span className="text-[10px] sm:text-xs md:text-sm">{section.label}</span>
-          </a>
+          </button>
         );
       })}
       </div>
