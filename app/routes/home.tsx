@@ -36,7 +36,7 @@ export default function Home() {
   const sectionRefs = sections.map(() => useRef<HTMLDivElement>(null));
 
   return (
-    <Scrollspy sectionRefs={sectionRefs as React.RefObject<Element>[]}>
+    <Scrollspy sectionRefs={sectionRefs as React.RefObject<Element>[]} offset={-100}>
       {({ currentElementIndexInViewport }) => (
         <div className="relative overflow-hidden">
           {/* Desktop Sidebar */}

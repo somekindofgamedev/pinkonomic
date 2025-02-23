@@ -25,7 +25,7 @@ export const Sidebar: React.FC<NavigationProps> = ({ sections, currentElementInd
       {sections.map((section, idx) => {
         return (
           <motion.a
-            key={section.id}
+            key={idx}
             className={`
               relative flex items-center justify-center w-12 h-12 rounded-lg transition-all
               ${currentElementIndexInViewport === idx ? "bg-pink-500 text-white" : "bg-white/10 hover:bg-white/20"}
@@ -67,7 +67,7 @@ export const MobileNav: React.FC<NavigationProps> = ({ sections, currentElementI
       {sections.map((section, idx) => {
         return (
           <a
-            key={section.id}
+            key={idx}
             className={`flex flex-col items-center justify-center text-xs p-2 rounded-md transition-all
               ${currentElementIndexInViewport === idx ? "text-pink-500" : "text-white/60 hover:text-white"}`}
             href={`#${section.id}`}
