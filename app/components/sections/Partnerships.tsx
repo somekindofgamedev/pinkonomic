@@ -20,24 +20,24 @@ const Partnerships = forwardRef<HTMLDivElement>((props, ref) => (
   <section 
     id="partnerships" 
     ref={ref} 
-    className="relative min-h-screen flex flex-col items-center justify-center bg-black text-white py-32 px-6 overflow-hidden"
+    className="relative min-h-screen flex flex-col items-center justify-center bg-black text-white py-24 px-6 md:px-12 overflow-hidden"
   >
     {/* 🔥 Background Effects */}
     <div className="absolute inset-0 bg-gradient-to-b from-pink-700/50 to-black opacity-60 -z-10"></div>
-    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[900px] h-[900px] bg-pink-500 rounded-full blur-[160px] opacity-30 -z-10"></div>
+    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[700px] md:w-[900px] h-[700px] md:h-[900px] bg-pink-500 rounded-full blur-[160px] opacity-30 -z-10"></div>
 
     {/* 🏆 Section Title */}
     <motion.h1 
-      className="text-4xl md:text-6xl font-bold tracking-wide uppercase bg-gradient-to-r from-pink-400 to-blue-500 text-transparent bg-clip-text text-center"
+      className="text-4xl md:text-5xl font-extrabold tracking-wide uppercase bg-gradient-to-r from-pink-400 to-blue-500 text-transparent bg-clip-text text-center mt-12 md:mt-16"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 1, ease: "easeOut" }}
     >
       Our Partners
     </motion.h1>
 
     {/* 🌟 Scrolling Partner Showcase with Natural Flow */}
-    <div className="relative w-full max-w-6xl mt-16 overflow-hidden">
+    <div className="relative w-full max-w-6xl mt-12 md:mt-16 overflow-hidden">
       {/* ✨ Soft Fading Edge for a Natural Look */}
       <div className="absolute top-0 left-0 w-16 md:w-24 h-full bg-gradient-to-r from-black via-transparent to-transparent z-10"></div>
       <div className="absolute top-0 right-0 w-16 md:w-24 h-full bg-gradient-to-l from-black via-transparent to-transparent z-10"></div>
@@ -60,7 +60,7 @@ const Partnerships = forwardRef<HTMLDivElement>((props, ref) => (
           >
             {/* Glowing Logo */}
             <motion.div 
-              className="w-24 md:w-40 h-24 md:h-40 flex items-center justify-center rounded-full shadow-lg border border-pink-500/20 hover:border-pink-500/40 bg-black bg-opacity-60 transition duration-300"
+              className="w-24 md:w-40 h-24 md:h-40 flex items-center justify-center rounded-full shadow-lg bg-black bg-opacity-60 transition duration-300"
               whileHover={{ scale: 1.1, rotate: 3 }}
             >
               <img src={partner.image} alt={partner.name} className="w-16 md:w-28 h-16 md:h-28 object-contain" />
