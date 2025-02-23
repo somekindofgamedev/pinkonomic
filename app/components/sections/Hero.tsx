@@ -7,15 +7,13 @@ const Hero = forwardRef<HTMLDivElement>((props, ref) => (
   <section
     id="hero"
     ref={ref}
-    className="relative flex flex-col items-center justify-center min-h-[85vh] px-6 md:px-16 pt-24 pb-24 overflow-hidden bg-black"
+    className="relative flex flex-col items-center justify-center min-h-screen px-6 md:px-16 pt-24 pb-24 overflow-hidden bg-black"
   >
     {/* 🖼 Background Image */}
-    <div className="absolute inset-0">
-      <img
-        src={PlatypusImage}
-        alt="PINK Platypus"
-        className="w-full h-full object-cover"
-      />
+    <div
+      className="absolute inset-0 bg-cover bg-center"
+      style={{ backgroundImage: `url(${PlatypusImage})` }}
+    >
       {/* 🔥 Stronger Background Overlay */}
       <div className="absolute inset-0 bg-black opacity-70"></div>
     </div>
@@ -50,6 +48,7 @@ const Hero = forwardRef<HTMLDivElement>((props, ref) => (
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+      style={{ marginTop: "85vh" }} // Move below the image
     >
       {[
         "Interopable with Moonbeam, Base, and Polkadot parachains",
@@ -58,14 +57,14 @@ const Hero = forwardRef<HTMLDivElement>((props, ref) => (
       ].map((text, index) => (
         <motion.div
           key={index}
-          className="flex items-center space-x-5 text-left"
+          className="flex flex-col md:flex-row items-center space-x-5 text-left"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 + index * 0.2, ease: "easeOut" }}
         >
           {/* ⭐ Animated Sparkle */}
           <motion.div
-            className="w-10 h-10 flex-shrink-0"
+            className="w-10 h-10 flex-shrink-0 mb-4 md:mb-0"
             whileHover={{ scale: 1.2, rotate: 10 }}
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
           >
