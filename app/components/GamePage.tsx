@@ -1,7 +1,6 @@
 import { useState, type JSX } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router";
-import { FaHome } from "react-icons/fa";
+import HomeButton from "~/components/HomeButton";
 
 interface Tournament {
   name: string;
@@ -25,6 +24,8 @@ const GamePage = ({ title, description, image, platforms, playLinks, tournaments
 
   return (
     <section className="relative bg-black text-white min-h-screen overflow-hidden">
+      <HomeButton />
+
       {/* Background Animation */}
       <motion.div className="absolute inset-0 bg-gradient-to-b from-black to-gray-900 opacity-80 -z-10" />
       <motion.div
@@ -32,17 +33,6 @@ const GamePage = ({ title, description, image, platforms, playLinks, tournaments
         animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.4, 0.2] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
-
-      {/* Home Button */}
-      <motion.div
-        className="absolute top-6 left-6 text-gray-400 hover:text-pink-400 transition text-lg"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        <Link to="/">
-          <FaHome className="text-2xl" />
-        </Link>
-      </motion.div>
 
       {/* Main Content Wrapper */}
       <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 pt-20 pb-32">

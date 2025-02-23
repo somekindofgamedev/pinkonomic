@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
+import HomeButton from "~/components/HomeButton";
 
 const PINKDROP_URL = "https://pink.frictionlessgaming.com/";
 
@@ -9,6 +10,8 @@ const PinkDrop = forwardRef<HTMLDivElement>((props, ref) => (
     ref={ref}
     className="relative min-h-screen bg-black text-white flex flex-col items-center justify-center overflow-hidden"
   >
+    <HomeButton />
+
     {/* 🔥 Background Glow */}
     <div className="absolute inset-0 bg-gradient-to-b from-pink-700/50 to-black opacity-60 -z-10"></div>
     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 w-[900px] h-[900px] bg-pink-500 rounded-full blur-[160px] opacity-30 -z-10"></div>
