@@ -27,9 +27,9 @@ const NFTSection = forwardRef<HTMLDivElement>((props, ref) => (
         {/* 🔥 Background Glow */}
         <div className="absolute inset-0 bg-gradient-to-b from-pink-700/50 to-black opacity-80 -z-10"></div>
 
-        {/* 🚀 Section Title (Now Consistent) */}
+        {/* 🚀 Section Title */}
         <motion.h2
-            className="text-5xl md:text-7xl font-extrabold uppercase text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-blue-400 text-center drop-shadow-xl"
+            className="text-4xl md:text-5xl font-extrabold uppercase text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-blue-400 text-center drop-shadow-xl"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -37,8 +37,8 @@ const NFTSection = forwardRef<HTMLDivElement>((props, ref) => (
             PINK NFT Collection
         </motion.h2>
 
-        {/* 🎨 NFT Collection Grid (Mobile Responsive) */}
-        <div className="relative z-10 mt-16 grid grid-cols-1 sm:grid-cols-2 gap-10 w-full max-w-6xl">
+        {/* 🎨 NFT Collection Grid */}
+        <div className="relative z-10 mt-16 grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-6xl">
             {NFT_COLLECTIONS.map((nft, index) => (
                 <motion.a
                     key={index}
@@ -58,8 +58,8 @@ const NFTSection = forwardRef<HTMLDivElement>((props, ref) => (
 
                     {/* 🔥 Collection Info */}
                     <div className="absolute bottom-0 w-full px-6 py-4 bg-black/80 text-white backdrop-blur-lg rounded-b-2xl">
-                        <h3 className="text-2xl sm:text-3xl font-bold text-pink-400">{nft.name}</h3>
-                        <p className="text-base sm:text-lg text-gray-300">{nft.description}</p>
+                        <h3 className="text-xl md:text-2xl font-bold text-pink-400">{nft.name}</h3>
+                        <p className="text-sm md:text-base text-gray-300">{nft.description}</p>
                     </div>
 
                     {/* ✨ Neon Glow Effect */}
@@ -68,7 +68,6 @@ const NFTSection = forwardRef<HTMLDivElement>((props, ref) => (
             ))}
         </div>
     </section>
-)
-);
+));
 
 export default NFTSection;
