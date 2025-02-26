@@ -88,27 +88,60 @@ const Pinkonomics = forwardRef<HTMLDivElement>((props, ref) => {
       </div>
 
       {/* 📊 Supply Information */}
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl relative">
         {[
           { label: "Total Supply", value: "2,300,001,221 PINK", color: "text-pink-400" },
           { label: "Circulating Supply", value: "1.58B PINK", color: "text-blue-400" },
         ].map((item, index) => (
           <motion.div
             key={index}
-            className="p-6 bg-white bg-opacity-10 rounded-xl shadow-lg border border-gray-700 text-center"
+            className="p-6 bg-transparent backdrop-blur-sm rounded-xl shadow-lg border border-gray-700 text-center relative overflow-visible"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <p className="text-lg md:text-xl font-semibold text-gray-300">{item.label}</p>
-            <motion.p
-              className={`text-2xl md:text-4xl font-bold ${item.color}`}
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              {item.value}
-            </motion.p>
+            {index === 0 && (
+             <motion.img
+               src="/app/images/brandassets/pink_bowtie.png"
+               alt="Pink Bow-tie"
+               className="absolute -top-4 left-1/2 -translate-x-1/2 w-12 h-auto z-10"
+               animate={{
+                 rotate: [0, 15, -15, 0]
+               }}
+               transition={{
+                 duration: 6,
+                 ease: "easeInOut",
+                 repeat: Infinity,
+               }}
+             />
+            )}
+            {index === 1 && (
+             <motion.img
+               src="/app/images/brandassets/pink_bowtie.png"
+               alt="Pink Bow-tie"
+               className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-auto z-10"
+               animate={{
+                 rotate: [0, -15, 15, 0]
+               }}
+               transition={{
+                 duration: 6,
+                 ease: "easeInOut",
+                 repeat: Infinity,
+               }}
+             />
+            )}
+            <div className="bg-gradient-to-br from-gray-900/80 via-gray-800/80 to-gray-900/80 absolute inset-0 rounded-xl z-0" />
+            <div className="relative z-1">
+              <p className="text-lg md:text-xl font-semibold text-gray-300">{item.label}</p>
+              <motion.p
+                className={`text-2xl md:text-4xl font-bold ${item.color}`}
+                initial={{ scale: 0.9 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                {item.value}
+              </motion.p>
+           </div>
           </motion.div>
         ))}
       </div>
