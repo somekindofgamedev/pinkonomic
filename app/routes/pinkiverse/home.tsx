@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router";
-import { FaHome, FaQuestionCircle } from "react-icons/fa";
+import { FaQuestionCircle } from "react-icons/fa";
 
 // Import game images
 import pinkDropPreview from "~/images/games/pinkdrop-preview.jpg";
 import pinknessOverdrivePreview from "~/images/games/pinkness-overdrive-preview.jpg";
 import pinkBulletPreview from "~/images/games/pink-bullet-preview.jpg";
 import pinkamolePreview from "~/images/games/pink-a-mole-preview.jpg";
+import HomeButton from "~/components/buttons/HomeButton";
 
 // Game Data
 const games = [
@@ -60,15 +61,7 @@ const Pinkiverse = () => {
       />
 
       {/* 🏠 Home Button (Subtle) */}
-      <motion.div
-        className="absolute top-6 left-6 text-gray-400 hover:text-pink-400 transition text-lg"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        <Link to="/">
-          <FaHome className="text-2xl" />
-        </Link>
-      </motion.div>
+      <HomeButton />
 
       {/* 🔥 Pinkiverse Header */}
       <motion.div
