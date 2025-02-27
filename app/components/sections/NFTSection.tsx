@@ -45,25 +45,30 @@ const NFTSection = forwardRef<HTMLDivElement>((props, ref) => (
                     href={nft.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative block w-full rounded-2xl overflow-hidden shadow-xl border border-pink-500 transition-all hover:scale-105"
+                    className="relative flex flex-col items-center text-center bg-black bg-opacity-50 backdrop-blur-lg rounded-3xl border border-pink-500/20 shadow-lg p-7 md:p-8 w-full transition hover:shadow-pink-400/30"
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    whileTap={{ scale: 0.98 }}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
                 >
-                    {/* 🖼 NFT Image with Overlay */}
-                    <div className="relative">
-                        <img src={nft.image} alt={nft.name} className="w-full h-[300px] sm:h-[400px] object-cover rounded-2xl" />
-                        <div className="absolute inset-0 bg-black opacity-40 rounded-2xl"></div>
+                    {/* 🖼 NFT Image Container */}
+                    <div className="relative w-full h-[250px] sm:h-[350px] overflow-hidden rounded-2xl mb-3">
+                        <motion.img 
+                            src={nft.image} 
+                            alt={nft.name} 
+                            className="absolute inset-0 w-full h-full object-cover"
+                            initial={{ scale: 1 }}
+                            animate={{ scale: [1, 1.05, 1] }}
+                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        />
                     </div>
 
                     {/* 🔥 Collection Info */}
-                    <div className="absolute bottom-0 w-full px-6 py-4 bg-black/80 text-white backdrop-blur-lg rounded-b-2xl">
+                    <div className="mt-2">
                         <h3 className="text-xl md:text-2xl font-bold text-pink-400">{nft.name}</h3>
                         <p className="text-sm md:text-base text-gray-300">{nft.description}</p>
                     </div>
-
-                    {/* ✨ Neon Glow Effect */}
-                    <div className="absolute inset-0 border-4 border-transparent rounded-2xl group-hover:border-pink-500/50 transition-all"></div>
                 </motion.a>
             ))}
         </div>
