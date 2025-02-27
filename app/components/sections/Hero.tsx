@@ -14,8 +14,13 @@ const Hero = forwardRef<HTMLDivElement>((props, ref) => (
       className="absolute inset-0 bg-cover bg-center"
       style={{ backgroundImage: `url(${PlatypusImage})` }}
     >
-      {/* 🔥 Stronger Background Overlay */}
-      <div className="absolute inset-0 bg-black opacity-70"></div>
+      {/* 🔥 Reduced Background Overlay */}
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+      {/* 🔥 Thinner Gradient Overlay on Edges */}
+      <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black to-transparent"></div>
+      <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black to-transparent"></div>
+      <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent"></div>
+      <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent"></div>
     </div>
 
     {/* 🏆 Hero Branding */}
@@ -77,9 +82,6 @@ const Hero = forwardRef<HTMLDivElement>((props, ref) => (
         </motion.div>
       ))}
     </motion.div>
-
-    {/* 🔽 Subtle transition into next section */}
-    <div className="absolute bottom-0 w-full h-20 bg-gradient-to-t from-black to-transparent"></div>
   </section>
 ));
 
