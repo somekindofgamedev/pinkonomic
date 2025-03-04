@@ -58,7 +58,7 @@ const Hero = forwardRef<HTMLDivElement>((props, ref) => (
       {[
         "Interopable with Moonbeam, Base, and Polkadot parachains",
         "Gaming ecosystem & NFT collectibles",
-        "Community-driven with DAO governance",
+        "Community driven",
       ].map((text, index) => (
         <motion.div
           key={index}
