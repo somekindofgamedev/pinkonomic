@@ -2,6 +2,7 @@ import { forwardRef, useState } from "react";
 import { motion } from "framer-motion";
 import { FaCopy, FaExternalLinkAlt, FaCheck } from "react-icons/fa";
 import PinkFlame from "~/images/pinkflame.gif";
+import PinkBowtie from "~/images/brandassets/pink_bowtie.png";
 
 // 🔥 Total supply (unchanging)
 const TOTAL_SUPPLY = 2300001221; // 2.3 Billion
@@ -102,7 +103,7 @@ const Pinkonomics = forwardRef<HTMLDivElement>((props, ref) => {
           >
             {index === 0 && (
              <motion.img
-               src="/app/images/brandassets/pink_bowtie.png"
+               src={PinkBowtie}
                alt="Pink Bow-tie"
                className="absolute -top-4 left-1/2 -translate-x-1/2 w-12 h-auto z-10"
                animate={{
@@ -117,7 +118,7 @@ const Pinkonomics = forwardRef<HTMLDivElement>((props, ref) => {
             )}
             {index === 1 && (
              <motion.img
-               src="/app/images/brandassets/pink_bowtie.png"
+               src={PinkBowtie}
                alt="Pink Bow-tie"
                className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-auto z-10"
                animate={{
