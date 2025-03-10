@@ -12,7 +12,7 @@ const Teleport = forwardRef<HTMLDivElement>((props, ref) => (
   <section 
     id="teleport" 
     ref={ref} 
-    className="relative flex flex-col items-center justify-center min-h-screen bg-black/40 backdrop-filter backdrop-blur-sm text-white py-24 px-6 md:px-12"
+    className="relative flex flex-col items-center justify-center min-h-screen bg-black/40 text-white py-24 px-6 md:px-12"
   >
     {/* 🔥 Background Glow Effects */}
     {/* <div className="absolute inset-0 bg-gradient-to-b from-pink-700/50 to-black opacity-60 -z-10"></div> */}

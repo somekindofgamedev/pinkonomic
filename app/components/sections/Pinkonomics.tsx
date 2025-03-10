@@ -43,7 +43,7 @@ const Pinkonomics = forwardRef<HTMLDivElement>((props, ref) => {
     <section
       id="pinkonomics"
       ref={ref}
-      className="relative flex flex-col items-center text-white py-24 px-4 md:px-12 bg-black/40 backdrop-filter backdrop-blur-sm"
+      className="relative flex flex-col items-center text-white py-24 px-4 md:px-12 bg-black/40"
     >
       {/* 🔥 Background Effects */}
       {/* <div className="absolute inset-0 bg-gradient-to-b from-pink-700/50 to-black opacity-60 -z-10"></div> */}

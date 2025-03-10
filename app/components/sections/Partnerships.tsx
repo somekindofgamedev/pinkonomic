@@ -20,7 +20,7 @@ const Partnerships = forwardRef<HTMLDivElement>((props, ref) => (
   <section 
     id="partnerships" 
     ref={ref} 
-    className="relative min-h-screen flex flex-col items-center justify-center bg-black/40 backdrop-filter backdrop-blur-sm text-white py-24 px-6 md:px-12 overflow-hidden"
+    className="relative min-h-screen flex flex-col items-center justify-center bg-black/40 text-white py-24 px-6 md:px-12 overflow-hidden"
   >
     {/* 🔥 Background Effects */}
     {/* <div className="absolute inset-0 bg-gradient-to-b from-pink-700/50 to-black opacity-60 -z-10"></div> */}

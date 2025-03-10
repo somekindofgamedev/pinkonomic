@@ -4,7 +4,7 @@ const PolkaDotBackground = () => {
   const dotsContainerRef = useRef<HTMLDivElement>(null);
   
   // Parallax speed ratio
-  const parallaxSpeedRatio = 0.2; // 30% of the content's scroll speed
+  const parallaxSpeedRatio = 0.2;
 
   useEffect(() => {
     const container = dotsContainerRef.current;
@@ -52,7 +52,7 @@ const PolkaDotBackground = () => {
           style={{
             width: size,
             height: size,
-            backgroundColor: `rgba(230, 0, 122, ${opacity})`,
+            backgroundColor: `rgba(50, 50, 50, ${opacity})`,
             margin: 'auto',
             gridColumn: colPos,
             gridRow: rowPos
@@ -67,7 +67,7 @@ const PolkaDotBackground = () => {
   const dots = renderDots();
 
   return (
-    <div className="fixed inset-0 w-full h-full z-[0] overflow-hidden pointer-events-none">
+    <div className="fixed inset-0 w-full h-full z-[0] overflow-hidden pointer-events-none mt-[200px]">
       <div 
         ref={dotsContainerRef}
         className="absolute inset-0 w-full h-full"

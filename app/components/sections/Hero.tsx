@@ -7,7 +7,7 @@ const Hero = forwardRef<HTMLDivElement>((props, ref) => (
   <section
     id="hero"
     ref={ref}
-    className="relative flex flex-col items-center justify-center min-h-screen px-6 md:px-16 pt-24 pb-24 overflow-hidden bg-transparent  backdrop-filter backdrop-blur-sm"
+    className="relative flex flex-col items-center justify-center min-h-screen px-6 md:px-16 pt-24 pb-24 overflow-hidden bg-transparent"
   >
     {/* 🖼 Background Image with Overlay and Rectangular Edge Fade */}
     <div
@@ -16,26 +16,16 @@ const Hero = forwardRef<HTMLDivElement>((props, ref) => (
         backgroundImage: `url(${PlatypusImage})`,
         // Rectangular mask - combines 4 linear gradients for each edge
         WebkitMaskImage: `
-          linear-gradient(to right, 
-            transparent, 
-            black 20%, 
-            black 80%, 
-            transparent
-          ),
+
           linear-gradient(to bottom, 
             transparent, 
             black 15%, 
-            black 85%, 
+            black 95%, 
             transparent 100%
           )
         `,
         maskImage: `
-          linear-gradient(to right, 
-            transparent, 
-            black 20%, 
-            black 80%, 
-            transparent
-          ),
+
           linear-gradient(to bottom, 
             transparent, 
             black 15%, 
@@ -48,7 +38,7 @@ const Hero = forwardRef<HTMLDivElement>((props, ref) => (
       }}
     >
       {/* 🔥 Reduced Background Overlay */}
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="absolute inset-0 bg-black opacity-70"></div>
       {/* 🔥 Thinner Gradient Overlay on Edges */}
       <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black to-transparent"></div>
       <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black to-transparent"></div>

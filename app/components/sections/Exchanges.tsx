@@ -23,7 +23,7 @@ const Exchanges = forwardRef<HTMLDivElement>((props, ref) => (
   <section 
     id="exchanges" 
     ref={ref} 
-    className="relative flex flex-col items-center bg-black/40 backdrop-filter backdrop-blur-sm text-white min-h-screen py-24 px-6 md:px-12"
+    className="relative flex flex-col items-center bg-black/40 text-white min-h-screen py-24 px-6 md:px-12"
   >
     {/* Background Glow Effects */}
     {/* <div className="absolute inset-0 bg-gradient-to-b from-pink-700/50 to-black opacity-60 -z-10"></div> */}

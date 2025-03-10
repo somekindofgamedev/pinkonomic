@@ -50,11 +50,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <div className="relative min-h-screen">
-      {/* Extra-low z-index black background */}
-      <div className="fixed inset-0 bg-black z-[-10]"></div>
+      <div className="fixed inset-0 bg-black z-[0]"></div>
       
-      {/* Polka dots will be at z-index -5 */}
-      <PolkaDotBackground />
+      <PolkaDotBackground/>
       
       {/* Content with positive z-index */}
       <div className="relative z-[1]">

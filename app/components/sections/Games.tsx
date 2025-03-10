@@ -22,7 +22,7 @@ const Games = forwardRef<HTMLDivElement>((props, ref) => (
   <section 
     id="games" 
     ref={ref} 
-    className="relative flex flex-col items-center text-white py-20 px-4 md:px-8 bg-black/40 backdrop-filter backdrop-blur-sm overflow-hidden">
+    className="relative flex flex-col items-center text-white py-20 px-4 md:px-8 bg-black/40 overflow-hidden">
     
     {/* Background Elements */}
     {/* <div className="absolute inset-0 bg-gradient-to-b from-black to-pink-900 opacity-60 -z-10"></div> */}
